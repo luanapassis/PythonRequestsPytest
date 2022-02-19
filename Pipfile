@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pytest = "*"
+requests = "*"
+allure-pytest = "*"
+assertpy = "*"
+pyodbc = {path = "./pyodbc-4.0.32-cp310-cp310-win_amd64.whl"}
+requests-oauthlib = "*"
+requests-ntlm = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
