@@ -10,9 +10,12 @@ class TestGetOauth1(TestBase):
     @allure.tag("API Test")
     @allure.title("Oauth1 auth")
     @allure.description("Test to test Oauth1 Authentication")
-    def test_basic_auth(self):
+    def test_oauth1_auth(self):
+        # arranges
         request = GetOauth1Request()
 
+        # actions
         response = request.execute_request()
 
+        # asserts
         assert_that(response.status_code).is_equal_to(200)

@@ -1,5 +1,3 @@
-import json
-
 import allure
 from assertpy import assert_that, soft_assertions
 
@@ -17,6 +15,7 @@ class TestPostNewPet(TestBase):
     @allure.title("Add new pet sucess")
     @allure.description("test adding new pet successfully")
     def test_add_new_pet_success(self):
+        # arranges
         payload = Pet()
         payload.id = "99"
         category = Category()
@@ -37,14 +36,33 @@ class TestPostNewPet(TestBase):
         payload.status = "avaliable"
 
         request = PostNewPetRequest()
+
+        # actions
         request.set_json_body(payload)
         response = request.execute_request()
         response_body = Utils.get_json_in_response(response)
 
+        # asserts
         assert_that(response.status_code).is_equal_to(200)
         with soft_assertions():
             assert_that(response_body["name"]).contains("Tes")
             assert_that(response_body["tags"][0]["name"]).is_equal_to("tag1")
             assert_that(response_body["tags"]).extracting("name").contains("tag2")
             assert_that(response_body["tags"]).extracting("name").is_equal_to(['tag1', 'tag2'])
+
+    @allure.tag("API Test")
+    @allure.title("Add new pet sucess with json file")
+    @allure.description("test adding new pet successfully with json file")
+    def test_add_new_pet_success_with_json_file(self):
+        # arranges
+        request = PostNewPetRequest()
+
+        # actions
+        request.set_json_body_from_file()
+        response = request.execute_request()
+        response_body = Utils.get_json_in_response(response)
+
+        # asserts
+        assert_that(response.status_code).is_equal_to(200)
+
 

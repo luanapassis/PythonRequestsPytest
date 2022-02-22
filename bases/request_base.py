@@ -17,12 +17,6 @@ class RequestBase:
         self.cookies = {}
         self.query_parameters = {}
         self.authentication_type = AuthenticationEnum.NONE.value
-        self.authenticator_user = ""
-        self.authenticator_password = ""
-        self.app_key = ""
-        self.app_secret = ""
-        self.user_oauth_token = ""
-        self.user_oauth_token_secret = ""
 
     @allure.step("Request")
     def execute_request(self):
@@ -36,24 +30,25 @@ class RequestBase:
 
         return response
 
+    def execute_request_without_log(self):
+        response = RequestUtils.execute_request(self.method, self.url, self.request_server, self.headers,
+                                                self.query_parameters, self.cookies, self.json_body,
+                                                self.authentication_type)
+
+        return response
+
     def add_headers(self, l_headers):
-        # for key in l_headers:
-        #     self.headers[key] = self.headers.get(key, l_headers[key])
         self.headers.update(l_headers)
 
     def add_cookies(self, l_cookies):
-        # for key in l_cookies:
-        #     self.cookies[key] = self.cookies.get(key, l_cookies[key])
         self.cookies.update(l_cookies)
 
     def add_query_parameters(self, l_query_parameters):
-        # for key in l_query_parameters:
-        #     self.query_parameters[key] = self.query_parameters.get(key, l_query_parameters[key])
         self.query_parameters.update(l_query_parameters)
 
-    def remove_headers(self, hearder):
+    def remove_headers(self, header):
         # recebe apenas a key
-        self.headers.pop(hearder)
+        self.headers.pop(header)
 
     def remove_cookies(self, cookie):
         # recebe apenas a key

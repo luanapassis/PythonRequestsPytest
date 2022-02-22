@@ -11,6 +11,7 @@ assertpy = "*"
 pyodbc = {path = "./pyodbc-4.0.32-cp310-cp310-win_amd64.whl"}
 requests-oauthlib = "*"
 requests-ntlm = "*"
+lxml = "*"
 
 [dev-packages]
 

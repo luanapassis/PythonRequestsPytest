@@ -11,8 +11,11 @@ class TestGetBasicAuth(TestBase):
     @allure.title("Digest auth")
     @allure.description("Test to test Digest Authentication")
     def test_basic_auth(self):
+        # arrange
         request = GetDigestAuthRequest()
 
+        # actions
         response = request.execute_request()
 
+        # asserts
         assert_that(response.status_code).is_equal_to(200)

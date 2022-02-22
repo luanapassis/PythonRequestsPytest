@@ -11,18 +11,26 @@ class TestDataBaseConnection(TestBase):
     @allure.tag("Data Base Connection")
     @allure.title("Connect with database and return the query result")
     def test_data_base_connection(self):
+        # arranges
         query_db_stesps = QueryDBSteps()
         product = "produto2"
 
+        # actions
         result = query_db_stesps.get_specific_product(product)
 
+        # asserts
         assert product == result[0][0]
 
     @allure.tag("Data Base Connection")
     @allure.title("Connect with database and return results")
     def test_data_base_connection_exemple(self):
+        # arranges
         query_db_stesps = QueryDBSteps()
+
+        #actions
         result = query_db_stesps.get_products()
+
+        #asserts
 
 
 

@@ -1,5 +1,5 @@
 ## <center>Arquitetura do Projeto</center>
-<h3><center> Python + Pytest + Selenium : </center></h3>
+<h3><center> Python + Pytest + Requests : </center></h3>
 
 ---------------------------------------------------
 <h3> Características: </h3>
@@ -16,7 +16,7 @@
 
 - Relatório de testes automatizados - Allure
 
-- Framework interação com interface - Selenium
+- Framework de requisições deAPI - Requests
 
 
 ---------------------------------------------------

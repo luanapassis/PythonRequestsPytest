@@ -50,3 +50,7 @@ class Utils:
     @classmethod
     def read_file(cls, path):
         return open(path, "r").read()
+
+    @classmethod
+    def convert_object_into_json(cls, payload):
+        return json.dumps(payload, default=lambda x: x.__dict__)

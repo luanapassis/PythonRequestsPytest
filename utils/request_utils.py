@@ -22,6 +22,15 @@ class RequestUtils:
         return response
 
     @classmethod
+    def execute_soap_request(cls, method, url, headers, xml_body, authentication_type):
+
+        authentication_used = cls.select_authentication_type(authentication_type)
+
+        response = requests.request(method, url, headers=headers, data=xml_body, auth=authentication_used)
+
+        return response
+
+    @classmethod
     def select_authentication_type(cls, authentication_type):
 
         authenticator_user = Utils.read_enviroment_key_json("authenticator_user")

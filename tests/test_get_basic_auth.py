@@ -11,8 +11,11 @@ class TestGetBasicAuth(TestBase):
     @allure.title("Basic auth")
     @allure.description("Test to test Basic Authentication")
     def test_basic_auth(self):
+        # arranges
         request = GetBasicAuthRequest()
 
+        # actions
         response = request.execute_request()
 
+        # asserts
         assert_that(response.status_code).is_equal_to(200)
