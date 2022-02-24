@@ -1,29 +1,28 @@
 {
-        "enviroment": "QA",
-        "QA":
-        {
-                "base_url": "https://petstore.swagger.io",
-                "authenticator_user": "postman",
-                "authenticator_password": "password",
-                "app_key": "RKCGzna7bv9YD57c",
-                "app_secret": "D+EdQ-gs$-%@2Nu7",
-
-                "db_url": "localhost",
-                "db_port": "xxx",
-                "db_name": "teste",
-                "db_user": "sa",
-                "db_password": "P@ssw0rd"
-        },
-        "HML":
-        {
-                "base_url": "xxx",
-                "authenticator_user": "xxx",
-                "authenticator_password": "xxx",
-
-                "DB_URL": "xxx",
-                "DB_PORT": "xxx",
-                "DB_NAME": "xxx",
-                "DB_USER": "xxx",
-                "DB_PASSWORD": "xxx"
-        }
+    "environment": "QA",
+    "QA": {
+        "base_url": "https://petstore.swagger.io",
+        "authenticator_user": "postman",
+        "authenticator_password": "password",
+        "app_key": "RKCGzna7bv9YD57c",
+        "app_secret": "D+EdQ-gs$-%@2Nu7",
+        "db_url": "localhost",
+        "db_port": "xxx",
+        "db_name": "teste",
+        "db_user": "sa",
+        "db_password": "P@ssw0rd",
+        "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpdGlrYUBxYS5jb20uYnIiLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjQ1NjQzMjEyLCJleHAiOjE2NDU2NDM4MTJ9.iGuj2yiI4kAixMNsne2t7-zHMKQy4LoPnbAjulLi_qw"
+    },
+    "HML": {
+        "base_url": "xxx",
+        "authenticator_user": "xxx",
+        "authenticator_password": "xxx",
+        "app_key": "xxx",
+        "app_secret": "xxx",
+        "db_url": "xxx",
+        "db_port": "xxx",
+        "db_name": "xxx",
+        "db_user": "xxx",
+        "db_password": "xxx"
+    }
 }

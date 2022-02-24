@@ -1,7 +1,7 @@
 {
   "id": $id,
   "category": {
-    "id": $catetoryId,
+    "id": $categoryId,
     "name": "$categoryName"
   },
   "name": "$name",

@@ -1,8 +1,8 @@
-from bases.request_base import RequestBase
+from bases.rest_request_base import RestRequestBase
 from enums.methods.methods_enum import MethodsEnum
 
 
-class GetCookiesRemovingRequest(RequestBase):
+class GetCookiesRemovingRequest(RestRequestBase):
     def __init__(self):
         super().__init__()
         #remove se estiver pre definido na request base

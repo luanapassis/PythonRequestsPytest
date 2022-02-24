@@ -1,10 +1,8 @@
-from bases.request_base import RequestBase
-from enums.authentication.authentication_enum import AuthenticationEnum
+from bases.rest_request_base import RestRequestBase
 from enums.methods.methods_enum import MethodsEnum
-from utils.utils import Utils
 
 
-class GetMantisRequest(RequestBase):
+class GetMantisRequest(RestRequestBase):
     def __init__(self):
         super().__init__()
         self.add_headers({'Authorization': '1uWBtLR_YsRgZiaYS-dGKVkj1Vfck32L'})

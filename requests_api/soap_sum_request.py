@@ -8,6 +8,5 @@ class SoapSumRequest(SoapRequestBase):
         self.url = "http://www.dneonline.com/calculator.asmx"
         self.method = MethodsEnum.POST.value
 
-
     def set_xml_body(self, payload):
         self.xml_body = payload

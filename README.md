@@ -10,13 +10,15 @@
 
 - Ambiente de desenvolvimento - PyCharm Community
 
-- Orquestrador de testes - PyTest
-
 - Gerenciamento de dependência - PipEnv
 
 - Relatório de testes automatizados - Allure
 
-- Framework de requisições deAPI - Requests
+- Framework de requisições de API - Requests
+
+- Orquestrador de testes - PyTest
+
+- Fluent Assertions - AssertPy (https://assertpy.github.io/docs.html)
 
 
 ---------------------------------------------------

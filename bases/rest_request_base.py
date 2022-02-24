@@ -6,14 +6,18 @@ from utils.request_utils import RequestUtils
 from utils.utils import Utils
 
 
-class RequestBase:
+class RestRequestBase:
 
     def __init__(self):
+        # Inicialização dos valores comuns a todas as requisições
         self.url = Utils.read_enviroment_key_json("base_url")
         self.request_server = ""
         self.method = ""
         self.json_body = None
-        self.headers = {'Content-Type': 'application/json'}
+        self.headers = {'Content-Type': 'application/json'
+                        # ,'Authorization': Utils.read_enviroment_key_json("token") #<== Exemplo de como adicionar
+                        # token default caso necessário
+                        }
         self.cookies = {}
         self.query_parameters = {}
         self.authentication_type = AuthenticationEnum.NONE.value
@@ -24,9 +28,9 @@ class RequestBase:
                                                 self.query_parameters, self.cookies, self.json_body,
                                                 self.authentication_type)
 
-        AllureUtils.allure_log_requests(self.url, self.request_server, self.query_parameters, self.json_body,
-                                        self.method, self.headers, self.cookies)
-        AllureUtils.allure_log_responses(response.status_code, response.headers, response.text, response)
+        AllureUtils.allure_log_rest_requests(self.url, self.request_server, self.query_parameters, self.json_body,
+                                             self.method, self.headers, self.cookies)
+        AllureUtils.allure_log_rest_responses(response.status_code, response.headers, response.text, response)
 
         return response
 

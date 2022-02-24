@@ -1,12 +1,10 @@
 import json
 
-from bases.request_base import RequestBase
-from enums.authentication.authentication_enum import AuthenticationEnum
+from bases.rest_request_base import RestRequestBase
 from enums.methods.methods_enum import MethodsEnum
-from utils.utils import Utils
 
 
-class GetFindPetByStatusRequest(RequestBase):
+class GetFindPetByStatusRequest(RestRequestBase):
     def __init__(self):
         super().__init__()
         self.add_query_parameters({'status': 'sold'})

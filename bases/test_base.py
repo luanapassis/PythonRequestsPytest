@@ -1,21 +1,19 @@
 import pytest
+from data_base_steps.query_db_steps import QueryDBSteps
+from steps.authentication_steps import AuthenticationSteps
 
 
 class TestBase:
 
-    @pytest.fixture(scope='session')
-    def config(self):
-        print("Function executed just once before all the tests")
-
-
 
     @pytest.fixture(autouse=True)
-    def base_test(self, config, request):
+    def base_test(self, before_suite):
         # setUp
-        print("antes do teste")
+        # caso a geração de token deva ser feita quando inicar cada teste
+        # AuthenticationSteps.get_token()
+        print("Inicio do teste")
 
         yield
 
         # tearDown
-        print("depois do teste")
-
+        print("Final do teste")

@@ -1,9 +1,9 @@
-from bases.request_base import RequestBase
+from bases.rest_request_base import RestRequestBase
 from enums.authentication.authentication_enum import AuthenticationEnum
 from enums.methods.methods_enum import MethodsEnum
 
 
-class GetOauth1Request(RequestBase):
+class GetOauth1Request(RestRequestBase):
     def __init__(self):
         super().__init__()
         self.url = "https://postman-echo.com"

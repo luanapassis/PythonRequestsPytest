@@ -24,11 +24,19 @@ class Utils:
         return config
 
     @classmethod
+    def write_token_in_config_file(cls, token):
+        with open("config.json") as f:
+            data = json.load(f)
+            environment = data["environment"]
+            data[environment]["token"] = token
+            json.dump(data, open("config.json", "w"), indent=4)
+
+    @classmethod
     def read_enviroment_key_json(cls, key):
         with open('config.json') as config_file:
             config = json.load(config_file)
-            enviroment = config["enviroment"]
-            result = config[enviroment][key]
+            environment = config["environment"]
+            result = config[environment][key]
         return result
 
     @classmethod
